@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<main>
+    <table class="table table-bordered " style="background-color: coral;">
+
+        @for (int i = 1; i < 11; i++)
+        {
+            <tr>
+                @for (int j = 1; j < 11; j++)
+                {
+                    int z = i * j;
+                    <td>@z</td>
+
+                }
+            </tr>
+        }
+    </table>
+
+
+
+
+    @{
+        ViewBag.Title = "about";
+
+
+        string Binario(int x)
+        {
+            string binary = Convert.ToString(x, 2);
+            return binary;
+        }
+
+        string Esadecimale(int x)
+        {
+            string hex = Convert.ToString(x, 16);
+            return hex;
+        }
+
+    }
+
+    <table class="table table-bordered" style="backgound-color: coral">
+
+        <thead>
+            CONVERTITORE NUMERI
+            <tr>
+                <th scope="col">N. Intera </th>
+                <th scope="col">N. Binaria</th>
+                <th scope="col">N. Esadecimale</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 1; i <= 500; i++)
+            {
+                <tr>
+                    <th>@i</th>
+                    <th> @Binario(i)  </th>
+                    <th> @Esadecimale(i) </th>
+                </tr>
+            }
+        </tbody>
+
+
+
+    </table>
+
+
+
+
+
+
+
+
+</main>
